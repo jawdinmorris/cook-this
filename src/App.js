@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavigationMenu from "./components/navigation/NavigationMenu";
+import Recipe from "./components/Recipe";
 
-function App() {
+function App(props) {
+  console.log(props.recipeList);
+  const recipes = props.recipeList;
+  const recipeList = recipes.map((recipe) => (
+    <Recipe
+      name={recipe.name}
+      description={recipe.description}
+      cookingTime={recipe.cookingTime}
+    />
+  ));
+
+  console.log(recipeList);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationMenu />
+      <h1>Cook This!</h1>
+      {recipeList}
     </div>
   );
 }

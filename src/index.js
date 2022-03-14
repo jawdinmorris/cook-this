@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+
+const DATA = [
+  { name: "Risotto", description: "Rice", cookTime: 90 },
+  { name: "Mac n Cheese", description: "Pasta", cookTime: 60 },
+  { name: "Chickpea Dahl", description: "Curry", cookTime: 45 },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App recipeList = {DATA}/>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
